@@ -4,12 +4,27 @@ A class of conversions between Shelf.Request in instances of jsonable_objects an
 
 A simple usage example:
 
-```dart
-import 'package:shelf_request_response_2_json_utility/shelf_request_response_2_json_utility.dart';
+### Required
+install dependencies with https://pub.dev/packages/jsonable_object
 
-main() {
-  var awesome = new Awesome();
+
+```dart
+import 'package:shelf_request_response_2_json_utility/shelf_request_response_2_jsonable_object_utility.dart';
+
+class Controller {
+  final ShelfRequestResponse2JsonUtility<Person> // Person implements IConvertToJson
+  shelfRequestResponse2JsonUtility =
+  ShelfRequestResponse2JsonUtility<Person>(PersonFactory());
+
+  @Route.post('/')
+  FutureOr<Response> post(Request request) {
+    var body = shelfRequestResponse2JsonUtility.body(request);
+    return shelfRequestResponse2JsonUtility.ok(body);
+  }
+
+  Router get router => _$ControllerRouter(this);
 }
+
 ```
 
 ## Features and bugs

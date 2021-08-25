@@ -1,7 +1,7 @@
 name: shelf_request_response_2_jsonable_object_utility
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# homepage: https://www.example.com
+description: A utility that converts the json request body to a jsonable type and one from a jsonable to a response
+version: 1.0.1
+homepage: https://github.com/RafaelSilvaPereira/shelf_request_response_2_jsonable_object_utility
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
